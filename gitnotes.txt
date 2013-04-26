@@ -1,0 +1,165 @@
+GIT NOTES
+
+also see git command cheat sheet:
+http://ionrails.com/2009/08/07/git-commands-adding-and-committing-cheatsheet/
+
+_____________________________________________
+
+
+____________________________________________
+
+Check status of Files
+
+git status
+
+
+
+_____________________________________________
+
+Tracking new files
+
+git add filename.txt
+
+__________________________________________
+
+Stage modified files
+
+git add filename.txt
+
+_____________________________________________
+
+Ignore files pg18
+
+________________________________________
+
+
+git diff 
+
+What have you changed but not yet staged? 
+What have you staged that you are about to commit?
+
+To see what you’ve changed but not yet staged, 
+type git diff with no other arguments:
+$ git diff
+
+__________________________________________
+
+git diff -staged
+
+compares your staged changes to your last commit
+
+git diff by itself doesn’t show all changes made since
+your last commit — only changes that are still unstaged. 
+This can be confusing, because if you’ve staged all of your 
+changes, git diff will give you no output
+
+____________________________________________
+
+git commit -m 'comment and -m argument required for all commits'
+
+git commit -v shows detail of the commit
+____________________________________________
+
+removing files pg22
+
+_________________________________________
+
+moving files
+
+rename a file
+
+$ git mv file_from file_to
+
+___________________________________________
+
+view commit history pg 24
+
+_____________________________________________
+
+change last commit
+
+git commit --amend
+
+takes your staging area and uses it for the commit
+
+$ git commit -m ’initial commit’
+$ git add forgotten_file
+$ git commit --amend
+
+______________________________________
+
+unstaging a staged file
+
+git reset HEAD filename.txt
+
+
+____________________________________
+
+unmodifying a modified file
+
+$ git checkout -- filename.txt
+
+revert it back to what it looked like when you
+last committed
+_________________________________________
+
+
+
+to replace a git repository through cloning:
+
+delete old directory
+rm /c/dev/gekko
+
+pwd
+/c/dev
+
+git clone git@github.com:/adamkuyrkendall/gekko.git
+
+_________________________________________
+
+show remote servers (remote repository)
+
+$ git remote -v
+
+_________________________________________
+
+add remote repository
+
+add a new remote Git repository as
+a shortname you can reference easily
+
+git remote add [nickname] url
+
+
+________________________________________
+
+Fetching from Remotes
+
+git fetch [remote-name]
+
+command goes out to that remote project and pulls down all the data from that
+remote project that you don’t have yet
+
+git fetch origin fetches any new work that has been
+pushed to that server since you cloned (or last fetched from) it
+
+fetch command pulls the data to your local repository — it doesn’t automatically
+merge it with any of your work or modify what you’re currently working on. You
+have to merge it manually into your work
+
+_________________________________________
+
+Pulling from remotes
+
+git pull origin master
+
+automatically fetch and then merge a remote branch into your current branch
+git pull generally
+
+fetches data from the server you originally cloned from and automatically tries to
+merge it into the code you’re currently working on
+
+__________________________________________
+
+
+
